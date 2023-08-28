@@ -1,19 +1,19 @@
 import os
+import subprocess
 
-def search_file(start_path, target_file):
-    for root, _, files in os.walk(start_path):
-        if target_file in files:
-            return os.path.join(root, target_file)
-    return None
 
-# Start searching from the home directory
-start_path = os.path.expanduser("~")  # Expands the "~" to the current user's home directory
-
-target_file = "Homework.pdf"
-
-result = search_file(start_path, target_file)
-
-if result:
-    print(f"File found at: {result}")
+# Create a directory
+dir_name = "Maldir"
+if not os.path.exists(dir_name):
+    os.mkdir(dir_name)
+    print(f"Directory {dir_name} created.")
 else:
-    print(f"File {target_file} not found.")
+    print(f"Directory {dir_name} already exists.")
+
+# Create a file in that directory
+file_name = "new_file.txt"
+file_path = os.path.join(dir_name, file_name)
+# Define the code to be written in the py file
+
+
+
